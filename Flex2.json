@@ -1,7 +1,7 @@
 {
     "Flex": 2,
     "name": "SCE",
-    "node": "5479d5f5-e00c-41a3-9ead-d21e065b8581",
+    "node": "472ab9f3-6355-46ce-a3a8-3fd70d6d9cd8",
     "objects": [
         {
             "name": "Player",
@@ -33,7 +33,7 @@
                 }
             ],
             "isDirectory": true,
-            "expanded": false,
+            "expanded": true,
             "uuid": "d544184b-0ca8-4f7a-a1ce-9de6fe53662e"
         },
         {
@@ -457,7 +457,7 @@
                 }
             ],
             "isDirectory": true,
-            "expanded": false,
+            "expanded": true,
             "uuid": "14da472a-b9f3-4355-a6ce-e3a83fd70d6d"
         },
         {
@@ -490,7 +490,8 @@
                 }
             ],
             "isDirectory": true,
-            "expanded": false
+            "expanded": true,
+            "uuid": "a8041a1f-adab-468c-8e04-1986fb47350d"
         },
         {
             "name": "Ending",
@@ -672,7 +673,7 @@
                 }
             ],
             "isDirectory": true,
-            "expanded": false,
+            "expanded": true,
             "uuid": "b08d55b9-745b-4ae7-9573-6ae00fff4cff"
         }
     ]

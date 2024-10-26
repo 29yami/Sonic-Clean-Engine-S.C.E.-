@@ -19,6 +19,7 @@ mus_ZoneBoss =		SMPS_id(ptr_mus_boss2)
 mus_Invincible =		SMPS_id(ptr_mus_invin)
 mus_GotThrough =	SMPS_id(ptr_mus_through)
 mus_Drowning =		SMPS_id(ptr_mus_drowning)
+mus_LevelSelect =		SMPS_id(ptr_mus_lev)
 
 mus__Last =			SMPS_id(ptr_musend)-1
 

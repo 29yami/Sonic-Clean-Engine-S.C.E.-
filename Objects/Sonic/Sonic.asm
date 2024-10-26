@@ -1403,10 +1403,10 @@ Sonic_InstaAndShieldMoves:
 		bclr	#Status_RollJump,status(a0)
 
 Sonic_FireShield:
-		btst	#Status_Invincible,status_secondary(a0)			; first, does Sonic have invincibility?
-		bne.s	locret_118FE								; if yes, branch
-		btst	#Status_FireShield,status_secondary(a0)			; does Sonic have a Fire Shield?
-		beq.s	Sonic_LightningShield						; if not, branch
+	;	btst	#Status_Invincible,status_secondary(a0)			; first, does Sonic have invincibility?
+	;	bne.s	locret_118FE								; if yes, branch
+	;	btst	#Status_FireShield,status_secondary(a0)			; does Sonic have a Fire Shield?
+	;	beq.s	locret_11A14						; if not, branch
 		move.b	#1,(Shield+anim).w
 		move.b	#1,double_jump_flag(a0)
 		move.w	#$800,d0
@@ -1420,35 +1420,6 @@ loc_11958:
 		clr.w	y_vel(a0)								; kill y-velocity
 		move.w	#$2000,(H_scroll_frame_offset).w
 		bsr.w	Reset_Player_Position_Array
-		sfx	sfx_FireAttack,1								; play Fire Shield attack sound
-; ---------------------------------------------------------------------------
-
-Sonic_LightningShield:
-		btst	#Status_LtngShield,status_secondary(a0)			; does Sonic have a Lightning Shield?
-		beq.s	Sonic_BubbleShield						; if not, branch
-		move.b	#1,(Shield+anim).w
-		move.b	#1,double_jump_flag(a0)
-		move.w	#-$580,y_vel(a0)							; bounce Sonic up, creating the double jump effect
-		clr.b	jumping(a0)
-		sfx	sfx_ElectricAttack,1							; play Lightning Shield attack sound
-; ---------------------------------------------------------------------------
-
-Sonic_BubbleShield:
-		btst	#Status_BublShield,status_secondary(a0)			; does Sonic have a Bubble Shield
-		beq.s	Sonic_InstaShield							; if not, branch
-		move.b	#1,(Shield+anim).w
-		move.b	#1,double_jump_flag(a0)
-		clr.w	x_vel(a0)								; halt horizontal speed...
-		clr.w	ground_vel(a0)							; ...both ground and air
-		move.w	#$800,y_vel(a0)							; force Sonic down
-		sfx	sfx_BubbleAttack,1							; play Bubble Shield attack sound
-; ---------------------------------------------------------------------------
-
-Sonic_InstaShield:
-		btst	#Status_Shield,status_secondary(a0)			; does Sonic have an S2 shield (The Elementals were already filtered out at this point)?
-		bne.s	locret_11A14								; if yes, branch
-		move.b	#1,(Shield+anim).w
-		move.b	#1,double_jump_flag(a0)
 		sfx	sfx_InstaAttack,1								; play Insta-Shield sound
 ; ---------------------------------------------------------------------------
 

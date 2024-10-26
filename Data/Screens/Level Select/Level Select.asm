@@ -42,7 +42,7 @@ LevelSelect_horizontal_count:		ds.w $10
 ; =============== S U B R O U T I N E =======================================
 
 LevelSelectScreen:
-		music	mus_Stop											; stop music
+		music	mus_LevelSelect											; stop music
 		jsr	(Clear_KosPlus_Module_Queue).w							; clear KosPlusM PLCs
 		ResetDMAQueue												; clear DMA queue
 		jsr	(Pal_FadeToBlack).w
@@ -125,6 +125,12 @@ LevelSelectScreen:
 		add.w	(LevelSelect_saved_act).w,d2
 		move.w	d2,(Current_zone_and_act).w
 		move.w	d2,(Apparent_zone_and_act).w
+
+
+	;	move.w	d3,d0
+	;	addq.w	#mus_LevelSelect,d0										; load Level Select music
+	;	jmp	(Play_Music).w											; play music
+	
 		rts
 
 ; ---------------------------------------------------------------------------
@@ -572,7 +578,7 @@ LevelSelect_MainText:		levselstr "SONIC TEST GAME - *** DEBUG MODE ***          
 
 ; main text
 LevelSelect_Text:
-		levselstr "   DEATH EGG          - ACT 1"
+		levselstr "   SEASIDE ISLAND     - ACT 1"
 		levselstr "   UNKNOWN LEVEL      - UNKNOWN"
 		levselstr "   UNKNOWN LEVEL      - UNKNOWN"
 		levselstr "   UNKNOWN LEVEL      - UNKNOWN"
@@ -589,5 +595,5 @@ LevelSelect_Text:
 		; scroll data
 
 LSScroll_Data: dScroll_Header
-		dScroll_Data 8, 8, -$100, FG									; start pos, size, velocity, plane
+		dScroll_Data 8, 8, -$080, FG									; start pos, size, velocity, plane
 LSScroll_Data_end

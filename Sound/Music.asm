@@ -13,6 +13,7 @@ ptr_mus_boss2:		SMPS_MUSIC_METADATA	Music_Boss2, s3TempotoS1($FF), 0			; Boss 2
 ptr_mus_invin:		SMPS_MUSIC_METADATA	Music_Invin, s3TempotoS1($FF), 0			; Invincible
 ptr_mus_through:	SMPS_MUSIC_METADATA	Music_Through, s3TempotoS1($FF), 0		; End of Act
 ptr_mus_drowning:	SMPS_MUSIC_METADATA	Music_Drowning, s3TempotoS1($02), SMPS_MUSIC_METADATA_FORCE_PAL_SPEED	; Drowning
+ptr_mus_lev:		SMPS_MUSIC_METADATA	Music_LevelSelect, s3TempotoS1($FF), 0			; Invincible
 
 ptr_musend
 
@@ -31,4 +32,6 @@ Music_Invin:			include "Sound/Music/Mus - Invincibility.asm"
 Music_Through: 		include "Sound/Music/Mus - Sonic Got Through.asm"
 	even
 Music_Drowning:		include "Sound/Music/Mus - Drowning.asm"
+	even
+Music_LevelSelect:		include "Sound/Music/Mus - Level Select.asm"
 	even
